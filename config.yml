@@ -1,0 +1,16 @@
+language: en
+pipeline:
+- name: "WhitespaceTokenizer"
+- name: "RegexEntityExtractor"
+- name: "CRFEntityExtractor"
+- name: "EntitySynonymMapper"
+- name: "CountVectorsFeaturizer"
+- name: "EmbeddingIntentClassifier"
+- name: "supervised_embeddings" 
+
+policies:
+- name: "MemoizationPolicy"
+- name: "KerasPolicy"
+- name: "MappingPolicy"
+- name: "FormPolicy"
+assistant_id: 20250228-171609-isothermal-capitol

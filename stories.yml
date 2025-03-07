@@ -1,0 +1,78 @@
+version: "3.1"
+
+stories:
+  ## happy path greet
+  - story: happy path greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+  
+  ## happy path without 4g sim
+  - story: happy path without 4g sim
+    steps:
+      - intent: thanks
+      - action: utter_goodbye
+
+  ## say goodbye
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  ## bot challenge
+  - story: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  ## happy path network issue
+  - story: happy path network issue
+    steps:
+      - intent: network_issue
+      - action: form
+      - action: form_info
+      - action: action_deactivate_form
+
+  ## affirm
+  - story: affirm
+    steps:
+      - intent: affirm
+      - action: utter_tell_issue
+
+  ## facing issue
+  - story: facing issue
+    steps:
+      - intent: facing_issue
+      - action: utter_change_settings
+
+  ## guide me
+  - story: guide me
+    steps:
+      - intent: guide_me
+      - action: utter_solution
+
+  ## have to do
+  - story: have to do
+    steps:
+      - intent: have_to_do
+      - action: utter_solution_4G
+
+  ## thanks and goodbye immediately
+  - story: thanks and goodbye immediately
+    steps:
+      - intent: thanks
+      - action: utter_goodbye
+
+  ## thanks with follow-up
+  - story: thanks with follow-up
+    steps:
+      - intent: thanks
+      - action: utter_anything_else
+      - intent: affirm
+      - action: utter_goodbye
+
+  ## deny
+  - story: deny
+    steps:
+      - intent: deny
+      - action: utter_thanks
